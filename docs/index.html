@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fix textBaseline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wrapper for canvas.getContext, designed to fix differences in textBaseline in different browsers">
+</head>
+
+<body>
+    <script src="./fix-text-baseline.js"></script>
+    <script>
+        var canvas = document.createElement("canvas");
+        document.body.appendChild(canvas);
+        var ctx = fixTextBaseline(canvas.getContext("2d"));
+        ctx.textBaseline = "top";
+        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.fillRect(0, 0, 100, 100);
+        ctx.fillStyle = "rgb(255, 0, 0)";
+        ctx.fillRect(0, 10, 100, 1);
+        ctx.fillStyle = "rgb(255, 255, 255)";
+        ctx.font = "40px Arial";
+        ctx.fillText("T", 0, 10);
+    </script>
+</body>
+
+</html>
