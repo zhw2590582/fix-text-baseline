@@ -19,7 +19,7 @@
   ctx.fillStyle = "rgb(255, 255, 255)";
   ctx.fillText("T", 0, 10);
   var result = {};
-  for (let f = 1; f < 100; f++) {
+  for (let f = 1; f <= 100; f++) {
     ctx.fillStyle = "rgb(0, 0, 0)";
     ctx.fillRect(0, 0, 100, 100);
     ctx.fillStyle = "rgb(255, 255, 255)";
