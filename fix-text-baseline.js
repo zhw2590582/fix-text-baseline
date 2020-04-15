@@ -36,10 +36,10 @@
   }
   document.body.removeChild(canvas);
   return function (ctx) {
-    if (Object.prototype.hasOwnProperty.call(ctx, "fillText")) {
-      delete ctx["fillText"];
-    }
-    var originalFillText = ctx.fillText;
+    if (typeof ctx !== "object") return ctx;
+    var prototype = Object.getPrototypeOf(ctx);
+    var originalFillText = prototype.fillText;
+    if (typeof originalFillText !== "function") return ctx;
     ctx.fillText = function () {
       var y = arguments[2];
       if (typeof y === "number") {
