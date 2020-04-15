@@ -36,6 +36,9 @@
   }
   document.body.removeChild(canvas);
   return function (ctx) {
+    if (Object.prototype.hasOwnProperty.call(ctx, "fillText")) {
+      delete ctx["fillText"];
+    }
     var originalFillText = ctx.fillText;
     ctx.fillText = function () {
       var y = arguments[2];
