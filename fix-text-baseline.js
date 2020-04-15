@@ -43,7 +43,7 @@
     ctx.fillText = function () {
       var y = arguments[2];
       if (typeof y === "number") {
-        var fontSizeMatch = ctx.font.match(/(\d+)(\.\d?)?px/i);
+        var fontSizeMatch = ctx.font.match(/(\d+)(?:\.\d?)?px/i);
         if (fontSizeMatch && fontSizeMatch[1]) {
           var diff = result[fontSizeMatch[1]];
           if (diff) {
