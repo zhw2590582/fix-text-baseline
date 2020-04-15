@@ -1,7 +1,7 @@
 {
   "name": "fix-text-baseline",
   "version": "1.0.2",
-  "description": "Wrapper for ctx, designed to fix differences in ctx.textBaseline in different browsers",
+  "description": "Wrapper for canvas.getContext, designed to fix differences in textBaseline in different browsers",
   "main": "fix-text-baseline.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
